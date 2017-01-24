@@ -1,0 +1,57 @@
+{% block content %}
+<html lang=''>
+<!-- Created by akarsh and vivek (noc) -->
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Create Incident</title>
+ {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'form-basic.css' %}" type='text/css'>
+	<link rel="stylesheet" href="{% static 'styles.css' %}" type='text/css'>
+</head>
+<body>
+<div id='cssmenu' style="height:50px">
+
+<ul>
+ <li><a class="active" href="/">Home</a></li>
+<!--  <li style="float:right"><a href="#"></a></li> -->
+</ul>
+
+</div>
+
+
+    <div class="main-content" style="margin-left:4%;width:45%;float:left;">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="get" action="/create/" style="">
+
+
+            <div class="form-title-row">
+                <h1>Details:</h1>
+
+        {% if bg %}
+                <ul style="text-align:left;margin-top:7%;">
+                        {% for key,value in bg.items %}
+                                <li> {{ key }}: {{ value }} </li><br>
+                        {% endfor %}
+                </ul>
+        {% else %}
+                <p>No name matched your search criteria.</p>
+        {% endif %}
+
+                </div>
+
+<div class="form-row" style="margin-top:-4%;width:45%;">
+<input type="submit" value="Create Jira!" style="background-color: rgb(4, 34, 58);"/></h2>
+</div>
+</form>
+
+
+{% endblock %}
+
+

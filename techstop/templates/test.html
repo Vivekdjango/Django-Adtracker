@@ -1,0 +1,193 @@
+{% block content %}
+<html lang=''>
+<!-- Created by akarsh and vivek (noc) -->
+
+<head>
+<!--
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+height:60px;
+padding: 0;
+    overflow: hidden;
+    background-color: #1F4356;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #1F4356;
+}
+</style>
+-->
+<div id='cssmenu' style="height:50px">
+
+<ul>
+  <li><a class="active" href="/">Home</a></li>
+<!--  <li style="float:right"><a href="#">Settings</a></li>-->
+</ul>
+    
+</div>
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Create Incident</title>
+ {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'form-basic.css' %}" type='text/css'>
+<link rel="stylesheet" href="{% static 'styles.css' %}" type='text/css'>
+<!--	<link rel="stylesheet" href="{% static 'login/form-basic.css' %}" type='text/css'> -->
+
+
+
+</head>
+<body>
+
+<!--<div id='cssmenu' style="height:60px">
+
+<ul>
+</ul>
+
+</div>
+-->
+
+    <div class="main-content" style="margin-left:4%;width:45%;float:left;">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="post" action="#" style="">
+{% csrf_token %}
+
+            <div class="form-title-row" style="">
+                <h1>Details:</h1>
+	{% if bg %}
+        	<ul style="text-align:left;margin-top:7%">
+                	{% for key,value in bg.items %}
+                        	<li> {{ key }}: {{ value }} </li><br>
+                	{% endfor %}
+        	</ul>
+	{% else %}
+    		<p>No name matched your search criteria.</p>
+	{% endif %}
+                </div>
+
+        </form>
+
+
+    </div>
+
+
+     <div class="main-content" style="margin-left:2%;width:45%;float:left;" >
+        <form class="form-basic" method="GET" action="#" style="">
+
+{% csrf_token %}
+
+            <div class="form-title-row">
+                <h1>Create Jira</h1>
+            </div>
+
+<div style="text-align:cenetr;">
+
+            <div class="form-row">
+                <label>
+                    <span>Subject:</span>
+                    <input style="color:black;width:60%;" type="text" name="summary" required="required">
+                </label>
+            </div>
+                  
+           <br/>
+	
+	<div class="form-row" >
+		 <label for="customfield_14635">Category:</label>
+                <select class="select cf-select" name="customfield_14635" id="customfield_14635">
+            <option value="-1">None</option>
+                            <option value="12607">VM</option>
+                                                                <option value="12608">Desktop</option>
+                                <option value="12609">Laptop</option>
+                                <option value="12610">Mobile</option>
+                                <option value="12611">LAN/WAN</option>
+                                <option value="12612">Server</option>
+                                <option value="12613">Other</option>
+                                <option value="13206">Printer</option>
+                                <option value="13613">Account Mgmt</option>
+                                <option value="13614">Google Apps</option>
+                                <option value="13615">Access Requests</option>
+                                <option value="13616">Wifi</option>
+                                <option value="13617">AV</option>
+                                <option value="13618">Virus</option>
+                                <option value="13619">VPN</option>
+                                <option value="14000">On boarding</option>
+                                <option value="14001">Exits</option>
+                                <option value="14103">Story</option>
+                                <option value="14104">Task</option>
+                                <option value="14200">Software Installation</option>
+                                <option value="14201">License Activation</option>
+                                <option value="14202">BlueJeans</option>
+                                <option value="14203">SSD/HDD</option>
+                                <option value="14204">Charger/Apple</option>
+                                <option value="14205">Charger/Lenovo/Dell</option>
+                                <option value="14206">Ram Upgradation</option>
+                                <option value="14207">Accessories</option>
+                                <option value="14208">Admin Access</option>
+                                <option value="14209">Monitor</option>
+            </select>
+                </label>
+            </div>
+
+</br>
+            <div class="form-row">
+                <label>
+                    <span>Description:</span>
+                    <textarea name="desc" required="required" style="width:60%;height:20%;margin-left:3%"></textarea>
+                </label>
+
+            </div>
+</br>
+            <div class="form-row" style="margin-top:-4%;width:45%;">
+
+
+<button style="width:45%;margin-left:35%;" href="/create/" onclick="myFunction()" >Create</button>
+<!--<button onclick="myfunction()" type="submit">Create</button> -->
+            </div>
+</div>
+        </form>
+</div>
+   <script>
+       function myFunction() {
+       alert("Created Successfully");}
+  </script>
+
+
+
+
+</div>
+</body>
+</html>
+
+{% endblock %}
+
+

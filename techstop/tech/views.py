@@ -176,7 +176,7 @@ def create(request):
 		s=request.GET['summary']
 		t=request.GET['customfield_14635']
 		options={'server':'http://jira.corp.inmobi.com'}
-		jira=JIRA(options,basic_auth=('jira.walkup','r?_A$_2rAbuS$8UsPeSuyumUbu6rU$'))
+		jira=JIRA(options,basic_auth=('jira.walkup',IDP_JIRA_PASSWORD))
                 root_dict={
                 'project':{'key':'TS'},
 		'issuetype':{'name':'Issue'},

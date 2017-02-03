@@ -128,7 +128,7 @@ AD_LDAP_PORT = 389
 
 AD_SEARCH_DN ='cn=Jira Walkup,ou=serviceAccounts,dc=CORP,dc=inmobi,dc=com'
 #AD_PASSWORD ='=8u?4d+E_rev?KuquphaS6aba_3eDr'
-AD_PASSWORD = 'r?_A$_2rAbuS$8UsPeSuyumUbu6rU$'
+AD_PASSWORD = IDP_AD_PASSWORD
 
 #AD_SEARCH_DN = 'cn=Vivek Sinha,ou=inmobians,dc=CORP,dc=inmobi,dc=com'
 

@@ -2,8 +2,6 @@ FROM dockerhub.corp.inmobi.com/idp/docker-ubuntu-14.04-phat:20161010_7
 
 MAINTAINER vivek.sinha@inmobi.com
 
-ENV RENDER_SCRIPT /opt/inmobi/commons/mustache-util/render-template
-
 RUN apt-get -y install apache2
 
 RUN apt-get -y install python-pip
@@ -37,5 +35,10 @@ COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY apache2.conf /etc/apache2/
 
-CMD [$RENDER_SCRIPT ,"--addenvvars True --template pass.template "]
+ADD render-template
+
+RUN chmod +x env.sh
+
+RUN env.sh
+
 CMD ["/etc/init.d/apache2","start"]

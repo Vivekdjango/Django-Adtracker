@@ -35,8 +35,7 @@ COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY apache2.conf /etc/apache2/
 
-RUN chmod +x env.sh
+#RUN chmod +x env.sh
 
-RUN env.sh
+CMD ["/bin/bash","env.sh"]
 
-CMD ["/etc/init.d/apache2","start"]

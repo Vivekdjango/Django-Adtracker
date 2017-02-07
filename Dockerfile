@@ -37,7 +37,7 @@ COPY env.sh /django/
 
 COPY apache2.conf /etc/apache2/
 
-COPY conf/* /etc/supervisor/conf.d/
+COPY techstop/conf/* /etc/supervisor/conf.d/
 
 
 

@@ -25,15 +25,19 @@ RUN pip install jira
 #Install django
 RUN pip install django
 
-RUN mkdir -p /django/first/
+RUN mkdir -p /django/techstop/
 
-RUN chmod -R 777 /django/first/
+RUN chmod -R 777 /django/techstop/
 
 COPY techstop/  /django/techstop/
 
 COPY 000-default.conf /etc/apache2/sites-available/
 
+COPY env.sh /django/
+
 COPY apache2.conf /etc/apache2/
 
 COPY conf/* /etc/supervisor/conf.d/
+
+
 

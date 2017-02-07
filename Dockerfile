@@ -35,7 +35,5 @@ COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY apache2.conf /etc/apache2/
 
-#RUN chmod +x env.sh
-
-CMD ["/bin/bash","env.sh"]
+COPY conf/* /etc/supervisor/conf.d/
 

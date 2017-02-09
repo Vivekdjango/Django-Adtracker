@@ -32,6 +32,8 @@ RUN pip install PyJWT
 
 RUN easy_install gevent
 
+RUN pip install cryptography
+
 RUN mkdir  /var/www/techstop/
 
 RUN chmod -R 777 /var/www/techstop/

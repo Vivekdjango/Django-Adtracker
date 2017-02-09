@@ -30,6 +30,8 @@ RUN pip install django
 
 RUN pip install PyJWT
 
+RUN easy_install gevent
+
 RUN mkdir  /var/www/techstop/
 
 RUN chmod -R 777 /var/www/techstop/

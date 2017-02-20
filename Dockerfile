@@ -2,6 +2,8 @@ FROM dockerhub.corp.inmobi.com/idp/docker-ubuntu-14.04-phat:20161010_7
 
 MAINTAINER vivek.sinha@inmobi.com
 
+ENV INMOBI_DEPLOY /opt/inmobi/usr/deployment
+
 RUN apt-get -y install apache2
 
 RUN apt-get -y install python-pip
@@ -42,8 +44,10 @@ COPY techstop/  /var/www/techstop/
 
 COPY 000-default.conf /etc/apache2/sites-available/
 
+COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}/validate
+
 COPY env.sh /var/www/techstop/
 
 COPY apache2.conf /etc/apache2/
 
-COPY techstop/conf/* /etc/supervisor/conf.d/
+COPY techstop/conf/command.conf /etc/supervisor/conf.d/

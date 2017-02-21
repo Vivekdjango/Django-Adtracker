@@ -2,11 +2,13 @@ FROM dockerhub.corp.inmobi.com/idp/docker-ubuntu-14.04-phat:20161010_7
 
 MAINTAINER vivek.sinha@inmobi.com
 
-ENV INMOBI_DEPLOY /opt/inmobi/usr/deployment
+RUN mkdir -p /opt/inmobi/usr/deployment/validate
 
 RUN apt-get -y install apache2
 
 RUN apt-get -y install python-pip
+
+ENV INMOBI_DEPLOY /opt/inmobi/usr/deployment
 
 #To install Apache WSGI module
 RUN apt-get -y  install libapache2-mod-wsgi 

@@ -2,7 +2,7 @@ FROM dockerhub.corp.inmobi.com/idp/docker-ubuntu-14.04-phat:20161010_7
 
 MAINTAINER vivek.sinha@inmobi.com
 
-RUN mkdir -p /opt/inmobi/usr/deployment/validate
+RUN mkdir -p /opt/inmobi/usr/deployment/validate/
 
 RUN apt-get -y install apache2
 
@@ -46,7 +46,7 @@ COPY techstop/  /var/www/techstop/
 
 COPY 000-default.conf /etc/apache2/sites-available/
 
-COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}/validate
+COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}/validate/
 
 COPY env.sh /var/www/techstop/
 

@@ -7,6 +7,6 @@ if [ $ret_code -eq 200  ];then
         exit 0
 fi
 
-
-
+echo "Got failed"
+exit 1
 

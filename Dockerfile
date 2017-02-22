@@ -4,7 +4,7 @@ MAINTAINER vivek.sinha@inmobi.com
 
 RUN mkdir -p /opt/inmobi/usr/deployment/
 
-RUN apt-get -y install apache2 curl
+RUN apt-get -y install apache2 
 
 RUN apt-get -y install python-pip
 
@@ -23,6 +23,8 @@ RUN apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev
 
 RUN apt-get -y install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev gcc
+
+RUN apt-get -y install curl
 
 #Upgrade pip
 RUN pip install --upgrade pip

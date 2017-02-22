@@ -1,3 +1,7 @@
 #!/bin/bash
 
-echo "worked perfectly"
+curl -Is http://localhost | head -n 1
+
+
+
+

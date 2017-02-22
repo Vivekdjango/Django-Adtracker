@@ -48,6 +48,8 @@ COPY 000-default.conf /etc/apache2/sites-available/
 
 COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}/validate/
 
+RUN  chmod -R 755 ${INMOBI_DEPLOY}/validate/
+
 COPY env.sh /var/www/techstop/
 
 COPY apache2.conf /etc/apache2/

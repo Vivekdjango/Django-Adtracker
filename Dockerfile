@@ -49,7 +49,7 @@ COPY techstop/  /var/www/techstop/
 
 COPY 000-default.conf /etc/apache2/sites-available/
 
-COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}
+COPY techstop/conf/validate.sh  ${INMOBI_DEPLOY}/
 
 RUN  chmod -R 755 ${INMOBI_DEPLOY}/validate.sh
 

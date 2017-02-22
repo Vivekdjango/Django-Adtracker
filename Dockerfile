@@ -4,7 +4,7 @@ MAINTAINER vivek.sinha@inmobi.com
 
 RUN mkdir -p /opt/inmobi/usr/deployment/
 
-RUN apt-get -y install apache2
+RUN apt-get -y install apache2 curl
 
 RUN apt-get -y install python-pip
 

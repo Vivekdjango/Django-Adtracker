@@ -13,5 +13,6 @@ set -e
   --output /var/www/techstop/tech/views.py
 
 
-/etc/init.d/apache2 start
+source /etc/apache2/envvars; /usr/sbin/apache2 -DFOREGROUND
+
 

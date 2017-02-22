@@ -8,7 +8,6 @@ RUN apt-get -y install apache2
 
 RUN apt-get -y install python-pip
 
-RUN apt-get -y install curl
 
 ENV INMOBI_DEPLOY /opt/inmobi/usr/deployment
 

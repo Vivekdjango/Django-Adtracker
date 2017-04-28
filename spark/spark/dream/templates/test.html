@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Bar chart</title>
+
+		{% load staticfiles %}
+	
+		<script type="text/javascript" src="{% static 'js/aka/jquery.min.js' %}"></script>
+		
+		    <link href="{% static 'css/aka/font-awesome.min.css' %}" rel="stylesheet">
+		    <link href="{% static 'css/aka/bootstrap.min.css' %}" rel="stylesheet">
+		    <link href="{% static 'css/aka/templatemo-style.css' %}" rel="stylesheet">
+
+		<script src="{% static 'js/aka/jquery1.min.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/aka/bs_leftnavi.css' %}">
+		<script src="{% static 'css/aka/bs_leftnavi.js' %}"></script>
+
+
+
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    Highcharts.chart('container1', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Monthly Average Clicks'
+        },
+        subtitle: {
+            text: 'From each PSO'
+        },
+        xAxis: {
+            categories: [
+                '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24'],
+		crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Count'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+	 series: [
+		{
+            name: 'JAPAC',
+            data: {{ japac }}
+
+        }, {
+            name: 'EMEA',
+            data: {{ emea }}
+        }, {
+            name: 'NA',
+            data: {{ na }}
+
+        }, {
+            name: 'CENTRAL',
+            data:  {{ central }}
+
+	}]	    
+
+	});
+});
+
+
+
+
+
+
+
+
+$(function () {
+    Highcharts.chart('container2', {
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Test1'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+        	data: [
+                	['JAPAC', {{ jp }}],
+                	['EMEA', {{ ep }}],
+                	['NA', {{ np }}],
+			['CENTRAL', {{ cp }}]
+            	]
+		
+	}]
+    });
+});
+
+
+
+
+		</script>
+
+
+
+
+
+
+  </head>
+  <body>
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+      <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+          <div class="square"></div>
+          <h1>Embark</h1>
+        </header>
+        <div class="profile-photo-container">
+        <a href="index.html">
+          <img src="{% static 'images/images1.png' %}" alt="Profile Photo" class="img-responsive"/>
+          <div class="profile-photo-overlay"></div></a>
+        </div>
+
+      <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+          <div class="input-group">
+              <button type="submit" class="fa fa-search"></button>
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          </div>
+        </form>
+ <!--       <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div> -->
+
+        <nav class="templatemo-left-nav">
+<!--      <ul class="gw-nav gw-nav-list"> -->
+<ul class="gw-nav gw-nav-list">
+
+        <li class="init-un-active"> <a href="/" > <span class="gw-menu-text">Home</span> </a>
+        </li>
+
+
+        <li class="init-un-active"> <a onclick="javascript:void(0)" > <span class="gw-menu-text">Dashboard</span> </a>
+            <ul class="gw-submenu">
+
+            <li> <a onclick="javascript:void(0)" href="/repo/">Report</a> </li>
+            </ul>
+
+        </li>
+
+
+          <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Graph</span> <b class="gw-arrow"></b> </a>
+          <ul class="gw-submenu">
+                <li> <a onclick="javascript:void(0)" href="/bar/">PSO</a> </li>
+                <li> <a href="javascript:void(0)">Duration</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Platform</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+          <ul class="gw-submenu">
+            <li> <a onclick="javascript:void(0)" href="/plat/">Play</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">About US</span> <b></b> </a>
+        </li>
+      </ul>
+</nav>
+    <script type="text/javascript" src="templatemo-script.js"></script>
+
+</div>
+
+
+
+
+
+      <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+          <div class="row">
+            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+            </nav>
+          </div>
+        </div>
+
+
+
+
+
+    <script type="text/javascript" src="templatemo-script.js"></script>     
+
+
+<script src="{% static 'js/highcharts.js' %}"></script>
+<script src="{% static 'js/exporting.js' %}"></script>
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet">
+
+<div class="container" style="margin-top: 5%;">
+
+<div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</div>
+
+	</body>
+</html>

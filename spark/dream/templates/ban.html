@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title>EMBARK</title>
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+    {% load staticfiles %}
+	<link href="{% static 'css/aka/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/aka/templatemo-style.css' %}" rel="stylesheet">
+
+
+
+
+<script src="{% static 'js/aka/jquery1.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/aka/bs_leftnavi.css' %}">
+<script src="{% static 'js/aka/bs_leftnavi.js' %}"></script>
+    
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<link rel="stylesheet" 
+href="{% static 'css/jquery.dataTables.min.css' %}"></style>
+<script type="text/javascript" 
+src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+
+
+
+
+<style>
+.sidebar{
+
+        background-color:black;
+        padding-bottom: 80%;
+}
+.sidebar a{
+        color:white;
+        margin-left:0px;
+        text-align:left;
+
+}
+.sidebar ul  a:hover{
+        background-color: black;
+        color:blue;
+}
+.sidebar li
+{
+        margin-top:7px;
+        text-align:center;
+}
+.nav-sidebar{
+        margin-top:0px;
+}
+
+
+.navbar-brand{
+        color:blue;
+}
+
+.table thead tr th
+{
+        padding:4px;
+        text-align:center;
+}
+.table-responsive  tr td {
+        padding:4px;
+}
+
+.table-responsive{
+        margin-top:20px;
+        text-align:left;
+        padding-left:0px;
+        margin-left:0px;
+}
+.navbar .navbar-fixed-top .bg-inverse{
+        background-color:white;
+        background-image:none;
+}
+.wrapper{
+        padding-left:0px;
+        margin-left:0px;
+}
+.btn-group{
+        margin-top:50px;
+}
+
+.btn-group .btn {
+        padding-right: 30px;
+}
+.dataTables_wrapper .dataTables_length {
+float: right;
+}
+.dataTables_wrapper .dataTables_filter {
+float: left;
+text-align: left;
+border-radius:12px solid #dbdbdb;
+}
+</style>
+
+
+
+
+
+
+  </head>
+  <body>
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+      <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+          <div class="square"></div>
+          <h1>Embark</h1>
+        </header>
+        <div class="profile-photo-container">
+        <a href="index.html">
+          <img src="{% static 'images/images1.png' %}" alt="Profile Photo" class="img-responsive"/>
+          <div class="profile-photo-overlay"></div></a>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+          <div class="input-group">
+              <button type="submit" class="fa fa-search"></button>
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          </div>
+        </form>
+ <!--       <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div> -->
+
+        <nav class="templatemo-left-nav">
+<!--      <ul class="gw-nav gw-nav-list"> -->
+<ul class="gw-nav gw-nav-list">
+
+        <li class="init-un-active"> <a href="/" > <span class="gw-menu-text">Home</span> </a>
+        </li>
+
+
+        <li class="init-un-active"> <a onclick="javascript:void(0)" > <span class="gw-menu-text">Dashboard</span> </a>
+            <ul class="gw-submenu">
+
+            <li> <a onclick="javascript:void(0)" href="/repo/">Report</a> </li>
+            </ul>
+
+        </li>
+
+
+          <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Graph</span> <b class="gw-arrow"></b> </a>
+          <ul class="gw-submenu">
+                <li> <a onclick="javascript:void(0)" href="/bar/">PSO</a> </li>
+                <li> <a href="javascript:void(0)">Duration</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Platform</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+          <ul class="gw-submenu">
+            <li> <a onclick="javascript:void(0)" href="/plat/">Play</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">About US</span> <b></b> </a>
+        </li>
+      </ul>
+</nav>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Main content --> 
+
+      <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+          <div class="row">
+            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+            </nav> 
+          </div>
+        </div>
+
+
+
+
+
+
+
+<body data-gr-c-s-loaded="true">
+
+
+<div class="container-fluid">
+      <div class="row">
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<h3 style="color: blue;"><center><u>Banner Report Dashboard</u></center></h3>
+
+          <div class="table-responsive">
+        <table id="myTable" class="table table-bordered table-condensed" width="100%" >
+        <thead  style="background-color: #003366;">
+              <tr style="color: white;padding: 4px;">
+
+                  <th>Ad Name</th>
+		<th>OS</th>
+		 <th>Info</th>
+                  <th>Click Count</th>
+		<th>Prev Click</th>
+		<th>Diffrence</th>
+                  <th>Location</th>
+              </tr>
+                </thead>
+                <tbody style="background-color: white;">
+
+
+
+</head>
+
+
+<div style="background-color: white;width:900px;  margin-left: 100px; padding: auto;border-radius: 10px;" >
+
+					{% for i in img %}
+
+							<tr>
+                                                                  <td>{{ i.0}}</td>
+								<td>{{ i.1 }}</td>
+								<td>{{ i.2 }}</td>
+                                                                  <td>{{ i.3}}</td>
+								 <td>{{ i.4 }}</td>
+								<td>{{ i.5 }}</td>
+								<td>{{ i.6 }}</td>
+							</tr>	
+
+				{% endfor %}
+
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+        <div class="col-sm-10 col-md-10 col-md-offset-1 main">
+
+        <h3 style="color: blue;"><center><u>Image Report Dashboard</u></center></h3>
+
+
+
+          <div class="table-responsive">
+        <table id="myTable" class="table table-bordered table-condensed" width="100%" >
+        <thead  style="background-color: #1F2124;">
+              <tr style="color: white;padding: 4px;">
+
+                  <th>Ad Name</th>
+                  <th>Click Count</th>
+                  <th>Views Count</th>
+                  <th>Location</th>
+                  <th>Info</th>
+                <th>Status</th>
+              </tr>
+                </thead>
+                <tbody style="background-color: white;">
+
+
+
+</head>
+
+
+<div style="background-color: white;width:900px;  margin-left: 100px; padding: auto;border-radius: 10px;" >
+
+<tr>
+                                                                  <td>ABC</td>
+                                                                  <td>2233</td>
+                                                                  <td>333444</td>
+                                                                  <td>IN</td>
+                                                                  <td>x.x.x.x</td>
+                                                                <td>pppppp</td>
+                                                </tr>
+
+
+                </tbody>
+            </table>
+          </div>
+        </div>
+  -->    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- JS -->
+    <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>      <!-- jQuery -->
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script> <!--  jQuery Migrate Plugin -->
+    <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
+    <script>
+      /* Google Chart 
+      -------------------------------------------------------------------*/
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart); 
+      
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Topping');
+          data.addColumn('number', 'Slices');
+          data.addRows([
+            ['Mushrooms', 3],
+            ['Onions', 1],
+            ['Olives', 1],
+            ['Zucchini', 1],
+            ['Pepperoni', 2]
+          ]);
+
+          // Set chart options
+          var options = {'title':'How Much Pizza I Ate Last Night'};
+
+          // Instantiate and draw our chart, passing in some options.
+          var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+          pieChart.draw(data, options);
+
+          var barChart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+          barChart.draw(data, options);
+      }
+
+      $(document).ready(function(){
+        if($.browser.mozilla) {
+          //refresh page on browser resize
+          // http://www.sitepoint.com/jquery-refresh-page-browser-resize/
+          $(window).bind('resize', function(e)
+          {
+            if (window.RT) clearTimeout(window.RT);
+            window.RT = setTimeout(function()
+            {
+              this.location.reload(false); /* false to get page from cache */
+            }, 200);
+          });      
+        } else {
+          $(window).resize(function(){
+            drawChart();
+          });  
+        }   
+      });
+      
+    </script> 
+    <script type="text/javascript" src="{% static 'js/aka/templatemo-script.js' %}"></script>      <!-- Templatemo Script -->
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+	<form  id="fo">{% csrf_token %}
+
+	{% load staticfiles %}
+<a href="#"><img src="{% static 'images/pics.jpg' %}"></>
+	</form>
+</body>
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+	$(document).on('click','#fo',function(e){
+		e.preventDefault();
+	$.ajax({
+		type:'POST',
+		url:'/search/',
+	data:{
+		csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+	},
+	success:function(){
+		alert("Done");
+
+		}	
+	});
+})
+</script>
+</html>

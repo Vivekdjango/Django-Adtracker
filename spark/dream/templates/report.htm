@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>CSS buttons with pseudo-elements</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="keywords" content="css, css3, pseudo, buttons, anchor, before, after, web design" />
+
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+	{% load staticfiles %}
+
+	    <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'css/aka/demo.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/aka/style4.css' %}" />
+
+    <link href="{% static 'css/aka/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/aka/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/aka/templatemo-style.css' %}" rel="stylesheet">
+
+
+<script src="{% static 'js/aka/jquery1.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/aka/bs_leftnavi.css' %}">
+<script src="{% static 'js/aka/bs_leftnavi.js' %}"></script>
+
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+
+
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+      <div class="templatemo-sidebar" style="background-color: #1F2124;">
+        <header class="templatemo-site-header">
+          <div class="square"></div>
+          <h1>Embark</h1>
+        </header>
+        <div class="profile-photo-container">
+        <a href="/">
+          <img src="{% static 'images/images1.png' %}" alt="Profile Photo" class="img-responsive"/>
+          <div class="profile-photo-overlay"></div></a>
+        </div>
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+          <div class="input-group">
+              <button type="submit" class="fa fa-search"></button>
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          </div>
+        </form>
+ <!--       <div class="mobile-menu-icon">
+            <i class="fa fa-bars"></i>
+        </div> -->
+
+        <nav class="templatemo-left-nav">
+<!--      <ul class="gw-nav gw-nav-list"> -->
+<ul class="gw-nav gw-nav-list">
+
+        <li class="init-un-active"> <a href="/" > <span class="gw-menu-text">Home</span> </a>
+        </li>
+
+
+        <li class="init-un-active"> <a onclick="javascript:void(0)" > <span class="gw-menu-text">Dashboard</span> </a>
+            <ul class="gw-submenu">
+
+            <li> <a onclick="javascript:void(0)" href="/repo/">Report</a> </li>
+            </ul>
+
+        </li>
+
+
+          <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Graph</span> <b class="gw-arrow"></b> </a>
+          <ul class="gw-submenu">
+                <li> <a onclick="javascript:void(0)" href="/bar/">PSO</a> </li>
+                <li> <a onclick="javascript:void(0)" href="/Ad/">Ad Type Perf</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Platform</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+          <ul class="gw-submenu">
+            <li> <a onclick="javascript:void(0)" href="/plat/">Play</a> </li>
+          </ul>
+        </li>
+        <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">About US</span> <b></b> </a>
+        </li>
+      </ul>
+</nav>
+
+</div>
+
+
+
+
+      <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+          <div class="row">
+            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+            </nav>
+          </div>
+        </div>
+
+
+
+
+    <!-- JS -->
+
+
+
+
+
+
+
+
+
+<!--       <div class="container"> -->
+                        <!-- Codrops top bar -->
+        <!--                <section> -->
+                <div id="container_buttons" style="    margin-top: 4%;
+    margin-bottom: 10%;background: rgb(239, 239, 239);">
+                    <p>
+                        <a class="a_demo_four" href="/image/">
+                           Image Report Dashboard
+                        </a>
+                    </p>
+                    <p>
+                        <a href="/video/" class="a_demo_four">
+                            Video Report Dashboard
+                        </a>
+                    </p>
+                    <p>
+                        <a href="/banner/" class="a_demo_four">
+                            Banner Report Dashboard
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="/carou/" class="a_demo_four">
+
+                            Carousel Report Dashboard
+                        </a>
+                    </p>
+
+
+                </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

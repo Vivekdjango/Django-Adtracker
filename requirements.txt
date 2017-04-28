@@ -1,3 +1,0 @@
-Djnago==1.09
-Python==2.7
-Apache
